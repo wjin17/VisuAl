@@ -1,0 +1,52 @@
+@mixin d-flex-row {
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox; /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  flex-direction: row;
+  flex-flow: nowrap;
+}
+
+@mixin d-flex-row-wrap {
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox; /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  width: 100%;
+}
+
+@mixin d-flex-row-x-scroll {
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox; /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  flex-direction: row;
+  flex-flow: nowrap;
+  overflow-x: scroll;
+}
+
+@mixin d-flex-col {
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox; /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  flex-direction: column;
+}
+
+.d-flex-row {
+  @include d-flex-row;
+}
+
+.d-flex-row-wrap {
+  @include d-flex-row-wrap;
+}
+
+.d-flex-row-x-scroll {
+  @include d-flex-row-x-scroll;
+}
+
+.d-flex-col {
+  @include d-flex-col;
+}

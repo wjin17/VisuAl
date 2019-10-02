@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Algorithm Visualizer</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <header>
+      <div>
+        <h1><a href="/">VisuAl</a></h1>
+      </div>
+      <ul>
+        <li class="active">
+          <a href="./BubbleSort.html">Sorting Algorithms</a>
+        </li>
+        <li><a href="news.asp">Datastructures</a></li>
+        <li><a href="contact.asp">About</a></li>
+      </ul>
+    </header>
+    <div class="dropdown">
+      <button class="dropdown__button" onclick="toggleDropdown()">
+        Algorithms
+        <i class="fas fa-angle-down"></i>
+      </button>
+      <div class="dropdown__content" id="dropdown__links">
+        <a class="dropdown__active" href="./BubbleSort.html">Bubble Sort</a>
+        <a href="./SelectionSort.html">Selection Sort</a>
+        <a href="./InsertionSort.html">Insertion Sort</a>
+        <a href="./MergeSort.html">Merge Sort</a>
+      </div>
+    </div>
+    <div class="canvas">
+      <h1>Bubble Sort</h1>
+      <div id="canvas__inner"></div>
+      <div class="canvas__slider">
+        <div class="canvas__slider__inner">
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+            class="slider"
+            id="slider__input"
+          />
+        </div>
+        <div class="play">
+          <button class="play__button" id="play__button__id" type="button">
+            <span id="play__toggle"></span>
+          </button>
+        </div>
+      </div>
+      <div class="canvas__input">
+        <div class="canvas__input__inner">
+          <h2>Generate Random Values</h2>
+          <p>Enter the number of random values you want to generate</p>
+          <div class="canvas__input__field">
+            <div>
+              <input class="sort__data" id="bubble-sort__data__random" />
+            </div>
+            <div class="canvas__input__button">
+              <button class="submit__data" onclick="randomInput()">
+                Generate
+              </button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2>Input Your Own Values</h2>
+          <p>Enter a list of numbers separated by a comma</p>
+          <div class="canvas__input__field">
+            <div>
+              <input class="sort__data" id="bubble-sort__data__user" />
+            </div>
+            <div class="canvas__input__button">
+              <button class="submit__data" onclick="userInput()">
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/a9dd5ac0e6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+    <script src="../js/main.js" async defer></script>
+    <script src="../js/bubble/script.js" async defer></script>
+    <script src="../js/bubble/bubbleSortAlgo.js" async defer></script>
+  </body>
+</html>
