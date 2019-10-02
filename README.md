@@ -12,7 +12,7 @@ Not quite sure who would want to do this but hey, who knows? Since these are jus
 
 ### Prerequisites
 
-Obviously, the first step is to get the files. Copy and paste the following line into your favorite terminal
+Obviously, the first step is to get the files. Copy and paste the following line into your favorite terminal.
 
 ```
 git clone https://github.com/wjin17/VisuAl.git
@@ -20,7 +20,7 @@ git clone https://github.com/wjin17/VisuAl.git
 
 ### Method 1
 
-This way is the most straight forward. Simply enter the path as the url to the file in any browser.
+This way is the most straight forward. Simply enter the path to the file as the url in any browser.
 
 For example, after cloning the repo to a folder named "VisuAl" on your desktop, enter the following into your browser url.
 
