@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #414141;
+  color: #f1f1f1;
 }
 
 .d-flex-row {
@@ -64,6 +65,71 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.landing {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-flow: nowrap;
+      flex-flow: nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 80%;
+  margin: 70px auto;
+}
+
+.landing .landing__image {
+  margin: 0;
+  width: 30%;
+}
+
+.landing .landing__text {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  max-width: 350px;
+}
+
+@media screen and (max-width: 768px) {
+  .landing {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .landing .landing__image {
+    margin: 10px auto;
+    width: 70%;
+  }
+  .landing .landing__text {
+    margin: 0 auto;
+    max-width: 250px;
+  }
 }
 
 header {
@@ -234,6 +300,23 @@ header li a:hover {
   height: 20px;
   border: 1px solid #f1f1f1;
   border-radius: 5px;
+}
+
+.landing__button {
+  background-color: #ca3e47;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.landing__button:active {
+  background-color: #525252;
 }
 
 .canvas__input__button {

@@ -1,3 +1,20 @@
+.landing__button {
+  background-color: $primary;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 0;
+  cursor: pointer;
+
+  &:active {
+    background-color: $muted;
+  }
+}
+
 .canvas__input__button {
   @include d-flex-col;
   justify-content: center;
