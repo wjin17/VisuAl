@@ -5,7 +5,11 @@ function bubbleSortAlgo(val) {
       let a = val[j];
       let b = val[j + 1];
       if (a > b) {
-        swap(val, j, j + 1);
+        frames.push([...val]);
+        current.push([j, j + 1]);
+        val[j] = val[j + 1] + ((val[j + 1] = val[j]), 0);
+        frames.push([...val]);
+        current.push([j, j + 1]);
         swapCount++;
       }
       frames.push([...val]);
@@ -18,10 +22,4 @@ function bubbleSortAlgo(val) {
     }
   }
   current.push([]);
-}
-
-function swap(arr, a, b) {
-  let temp = arr[a];
-  arr[a] = arr[b];
-  arr[b] = temp;
 }

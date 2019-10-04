@@ -1,0 +1,38 @@
+.links__title {
+  text-align: center;
+}
+
+.landing__link {
+  flex: 0 0 90%;
+  padding: 10px;
+
+  a {
+    text-decoration: none;
+    width: 100%;
+
+    img {
+      border-radius: 5px;
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 414px) {
+  .landing__link {
+    box-sizing: border-box;
+    flex: 0 0 33.3%;
+
+    a {
+      text-decoration: none;
+      width: 100%;
+      height: auto;
+
+      img {
+        border-radius: 5px;
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}

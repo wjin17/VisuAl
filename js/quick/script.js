@@ -2,7 +2,7 @@ let canvas;
 let canvasWidth;
 
 //Default values
-let values = Array.from({ length: 20 }, () => Math.floor(Math.random() * 100));
+let values = Array.from({ length: 20 }, () => Math.floor(Math.random() * 100)); //[24, 91, 75, 76, 47];
 let frames = [];
 let frameId = 0;
 let current = [];
@@ -38,7 +38,7 @@ function setup() {
   frameRate(10);
   frames.push([...values]);
   current.push([]);
-  insertionSortAlgo(values);
+  quickSortAlgo(values, 0, values.length - 1);
   frames.push([...values]);
   current.push([]);
 
@@ -50,6 +50,7 @@ function draw() {
   const rectWidth = canvasWidth / frames[frameId].length;
 
   for (let i = 0; i < frames[frameId].length; i++) {
+    //console.log("rectangle", frames[frameId][i], values[frames[frameId][i]]);
     const rectHeight =
       (frames[frameId][i] / Math.max(...frames[frameId])) * height * 0.75;
     stroke(0);
@@ -81,9 +82,10 @@ function draw() {
 
 // User inputs
 function randomInput() {
-  var numRandom = document.getElementById("insertion-sort__data__random").value;
-  document.getElementById("insertion-sort__data__user").value = null;
+  var numRandom = document.getElementById("quick-sort__data__random").value;
+  document.getElementById("quick-sort__data__user").value = null;
   if (numRandom) {
+    tempFrame = null;
     values = Array.from({ length: numRandom }, () =>
       Math.floor(Math.random() * 100)
     );
@@ -92,7 +94,7 @@ function randomInput() {
   }
   frames.push([...values]);
   current.push([]);
-  insertionSortAlgo(values);
+  quickSortAlgo(values, 0, values.length - 1);
   frames.push([...values]);
   current.push([]);
   play = false;
@@ -104,18 +106,19 @@ function randomInput() {
 
 function userInput() {
   var userValues = document
-    .getElementById("insertion-sort__data__user")
+    .getElementById("quick-sort__data__user")
     .value.split(",")
     .map(Number);
-  document.getElementById("insertion-sort__data__random").value = null;
+  document.getElementById("quick-sort__data__random").value = null;
   if (userValues[0]) {
+    tempFrame = null;
     frames = [];
     current = [];
     values = userValues;
   }
   frames.push([...values]);
   current.push([]);
-  insertionSortAlgo(values);
+  quickSortAlgo(values, 0, values.length - 1);
   frames.push([...values]);
   current.push([]);
   play = false;

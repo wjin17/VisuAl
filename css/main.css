@@ -109,7 +109,26 @@ body {
   max-width: 350px;
 }
 
-@media screen and (max-width: 768px) {
+.landing__links__inner {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  width: 100%;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  margin: 50px auto;
+}
+
+@media screen and (max-width: 414px) {
   .landing {
     display: -webkit-box;
     /* OLD - iOS 6-, Safari 3.1-6, BB7 */
@@ -129,6 +148,27 @@ body {
   .landing .landing__text {
     margin: 0 auto;
     max-width: 250px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .landing__links__inner {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-flow: wrap;
+        flex-flow: wrap;
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
@@ -503,6 +543,48 @@ header li a:hover {
   cursor: pointer;
   /* Cursor on hover */
   border-radius: 50px;
+}
+
+.links__title {
+  text-align: center;
+}
+
+.landing__link {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 90%;
+          flex: 0 0 90%;
+  padding: 10px;
+}
+
+.landing__link a {
+  text-decoration: none;
+  width: 100%;
+}
+
+.landing__link a img {
+  border-radius: 5px;
+  display: block;
+  width: 100%;
+}
+
+@media screen and (min-width: 414px) {
+  .landing__link {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.3%;
+            flex: 0 0 33.3%;
+  }
+  .landing__link a {
+    text-decoration: none;
+    width: 100%;
+    height: auto;
+  }
+  .landing__link a img {
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+  }
 }
 
 .active {

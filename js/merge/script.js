@@ -31,15 +31,15 @@ playButton.onclick = function() {
 
 // Canvas
 function setup() {
-  frames.push([...Array(values.length).keys()]);
-
   canvasWidth = windowWidth * 0.9;
   canvas = createCanvas(canvasWidth, 250);
   canvas.parent("canvas__inner");
   background("#525252");
   frameRate(10);
-
+  frames.push([...Array(values.length).keys()]);
+  current.push([]);
   mergeSortAlgo(values, Array.from(Array(values.length).keys()));
+  frames.push([...tempFrame]);
   current.push([]);
 
   slider.setAttribute("max", frames.length - 1);
@@ -91,9 +91,11 @@ function randomInput() {
     );
     frames = [];
     current = [];
-    frames.push([...Array(values.length).keys()]);
   }
+  frames.push([...Array(values.length).keys()]);
+  current.push([]);
   mergeSortAlgo(values, Array.from(Array(values.length).keys()));
+  frames.push([...tempFrame]);
   current.push([]);
   play = false;
   slider.setAttribute("max", frames.length - 1);
@@ -113,9 +115,11 @@ function userInput() {
     frames = [];
     current = [];
     values = userValues;
-    frames.push([...Array(values.length).keys()]);
   }
+  frames.push([...Array(values.length).keys()]);
+  current.push([]);
   mergeSortAlgo(values, Array.from(Array(values.length).keys()));
+  frames.push([...tempFrame]);
   current.push([]);
   play = false;
   slider.setAttribute("max", frames.length - 1);

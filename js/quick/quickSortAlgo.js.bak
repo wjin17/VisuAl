@@ -1,0 +1,111 @@
+let tempFrame = null;
+
+function quickSortAlgo(arr, indices) {
+  if (!tempFrame) {
+    console.log(arr);
+    tempFrame = indices;
+  }
+  if (indices.length < 2) {
+    return indices;
+  }
+  let pivot = indices[indices.length - 1];
+  //console.log("indices\n", indices, "\n", "pivot\n", pivot);
+  //console.log("arr\n", arr, "\n", "pivot\n", pivot);
+  let left = [];
+  let right = [];
+  let currentPivot = pivot;
+  console.log("expected pivot", pivot);
+  for (let i = 0; i < indices.length - 1; i++) {
+    let frameI = i;
+    //console.log("index", indices[i], "arr", arr[indices[i]], "pivot", pivot);
+    if (arr[indices[i]] <= arr[pivot]) {
+      left.push(indices[i]);
+      //console.log("left side temp frame", tempFrame);
+      frames.push([...tempFrame]);
+      current.push([i, currentPivot]);
+      //current.push([]);
+    } else {
+      right.push(indices[i]);
+      //console.log("pre right side temp frame", [...tempFrame], "pivot", pivot);
+      frames.push([...tempFrame]);
+      current.push([i, currentPivot]);
+      //current.push([]);
+      let tempPivot = tempFrame[i];
+      //let tempPivot2 = pivot;
+      //console.log(tempFrame);
+
+      for (let j = frameI; j < indices.length - 1; j++) {
+        tempFrame[j] = tempFrame[j + 1];
+        //console.log(tempFrame[j]);
+      }
+      tempFrame[currentPivot] = tempPivot;
+      frameI--;
+      currentPivot--;
+      console.log("changed current pivot", pivot);
+      //tempFrame[indices.length - 1] = tempPivot;
+      //console.log("right side temp frame", [...tempFrame]);
+      frames.push([...tempFrame]);
+      current.push([tempFrame.length - 1, currentPivot]);
+      //current.push([]);
+    }
+  }
+  //tempFrame.splice(Math.min(...indices), indices.length, ...indices);
+  //frames.push([...tempFrame]);
+  //current.push([]);
+  //console.log("left", left, "right", right);
+  let leftSorted = quickSortAlgo(arr, left);
+  //console.log("called on left");
+  let rightSorted = quickSortAlgo(arr, right);
+  //console.log("called on right");
+  //console.log("leftS", leftSorted, "rightS", rightSorted);
+  //console.log("final temp frame", [...tempFrame]);
+  //frames.push([...tempFrame]);
+  //current.push([pivot]);
+  return leftSorted.concat(pivot, rightSorted);
+}
+
+/* function quickSortAlgo(arr, indices) {
+  if (!tempFrame) {
+    tempFrame = indices;
+  }
+  if (indices.length < 2) {
+    return indices;
+  } else {
+    const middle = Math.ceil(indices.length / 2);
+    let left = quickSortAlgo(arr, indices.slice(0, middle));
+    let right = quickSortAlgo(arr, indices.slice(middle));
+    return merge(arr, indices, left, right);
+  }
+}
+
+function merge(arrM, indicesM, l, r) {
+  let i = 0,
+    j = 0,
+    k = 0;
+  while (i < l.length && j < r.length) {
+    if (arrM[l[i]] < arrM[r[j]]) {
+      indicesM[k] = l[i];
+      i++;
+    } else {
+      indicesM[k] = r[j];
+      j++;
+    }
+    k++;
+  }
+  while (i < l.length) {
+    indicesM[k] = l[i];
+    i++;
+    k++;
+  }
+  while (j < r.length) {
+    indicesM[k] = r[j];
+    j++;
+    k++;
+  }
+  tempFrame.splice(Math.min(...indicesM), indicesM.length, ...indicesM);
+  frames.push([...tempFrame]);
+  current.push([...indicesM]);
+
+  return indicesM;
+}
+ */

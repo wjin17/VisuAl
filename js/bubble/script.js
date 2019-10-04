@@ -31,14 +31,16 @@ playButton.onclick = function() {
 
 // Canvas
 function setup() {
-  frames.push([...values]);
-
   canvasWidth = windowWidth * 0.9;
   canvas = createCanvas(canvasWidth, 250);
   canvas.parent("canvas__inner");
   background("#525252");
   frameRate(10);
+  frames.push([...values]);
+  current.push([]);
   bubbleSortAlgo(values);
+  frames.push([...values]);
+  current.push([]);
 
   slider.setAttribute("max", frames.length - 1);
 }
@@ -86,10 +88,13 @@ function randomInput() {
       Math.floor(Math.random() * 100)
     );
     frames = [];
-    frames[0] = [...values];
     current = [];
   }
+  frames.push([...values]);
+  current.push([]);
   bubbleSortAlgo(values);
+  frames.push([...values]);
+  current.push([]);
   play = false;
   slider.setAttribute("max", frames.length - 1);
   slider.value = 0;
@@ -105,11 +110,14 @@ function userInput() {
   document.getElementById("bubble-sort__data__random").value = null;
   if (userValues[0]) {
     frames = [];
-    frames[0] = [...userValues];
     current = [];
     values = userValues;
   }
+  frames.push([...values]);
+  current.push([]);
   bubbleSortAlgo(values);
+  frames.push([...values]);
+  current.push([]);
   play = false;
   slider.setAttribute("max", frames.length - 1);
   slider.value = 0;

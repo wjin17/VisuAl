@@ -8,13 +8,11 @@ function selectionSortAlgo(val) {
       frames.push([...val]);
       current.push([currentMin, j, i]);
     }
-    swap(val, i, currentMin);
+    frames.push([...val]);
+    current.push([currentMin, i]);
+    val[i] = val[currentMin] + ((val[currentMin] = val[i]), 0);
+    frames.push([...val]);
+    current.push([currentMin, i]);
   }
   current.push([]);
-}
-
-function swap(arr, a, b) {
-  let temp = arr[a];
-  arr[a] = arr[b];
-  arr[b] = temp;
 }
