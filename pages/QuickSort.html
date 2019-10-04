@@ -96,6 +96,40 @@
         </div>
       </div>
     </div>
+    <div class="description">
+      <h1>Whats goin on?</h1>
+      <p>
+        Quick sort works by selecting a pivot in an array. Each element is then
+        compared to the pivot. If the element is smaller than the pivot, it is
+        swapped with the first element of the array of values greater than the
+        pivot. If the element is larger, it is swapped with the last If the
+        value is greater than the pivot, nothing happens and the algorithm moves
+        onto the next element. After the entire array has been traversed, the
+        function is called on the array of values smaller than the pivot and the
+        array of values greater than the pivot. Each subsequent array has its
+        own pivot and the function is called until it is sorted.
+      </p>
+      <h1>Performance</h1>
+      <h2>Time complexity</h2>
+      <p>
+        Because each subsequent call iterates through the entire array, and each
+        subsequent array is approximately half of the original, the time
+        complexity of this algorithm is
+      </p>
+      <p class="description__complexity">O(nlog(n))</p>
+      <h2>Space complexity</h2>
+      <p>
+        Quick sort creates a stack for each call of the function which only
+        needs to be called on each array. The number of arrays decreases
+        logarithmically so the space complexity is
+      </p>
+      <p class="description__complexity">
+        O(log(n))
+      </p>
+      <a href="https://en.wikipedia.org/wiki/Selection_sort"
+        ><h1>More Info...</h1></a
+      >
+    </div>
     <script
       src="https://kit.fontawesome.com/a9dd5ac0e6.js"
       crossorigin="anonymous"

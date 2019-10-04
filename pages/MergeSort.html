@@ -96,6 +96,41 @@
         </div>
       </div>
     </div>
+    <div class="description">
+      <h1>Whats goin on?</h1>
+      <p>
+        Merge sort is an algorithm that utilizes recursion. The function splits
+        the array and calls itself on the two halves. The function merges the
+        two halves and returns a combined sorted array. This process is then
+        repeated until each subsequent array to be put into the function again
+        only contains a single value. Then the function returns the single value
+        array and begins the second step which merges it with its corresponding
+        half. During the merge, both arrays will be iterated through and
+        combined in increasing order to a bigger array which is then returned by
+        the function. This process is repeated until the original array is
+        rebuilt sorted.
+      </p>
+      <h1>Performance</h1>
+      <h2>Time complexity</h2>
+      <p>
+        Because each recursive call operates on only half the array, the size of
+        the array decreases logarithmically. Rebuilding the array occurs in a
+        single iteration through both arrays. This means that the time
+        complexity of this algorithm is
+      </p>
+      <p class="description__complexity">O(nlog(n))</p>
+      <h2>Space complexity</h2>
+      <p>
+        Merge sort combines two halves of an array into another array. This
+        means that the space complexity of this algorithm is
+      </p>
+      <p class="description__complexity">
+        O(n)
+      </p>
+      <a href="https://en.wikipedia.org/wiki/Merge_sort"
+        ><h1>More Info...</h1></a
+      >
+    </div>
     <script
       src="https://kit.fontawesome.com/a9dd5ac0e6.js"
       crossorigin="anonymous"

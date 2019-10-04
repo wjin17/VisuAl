@@ -1,0 +1,19 @@
+.description {
+  margin: 10px 5%;
+  padding: 10px;
+  background-color: $muted;
+  border-radius: 5px;
+
+  h1 {
+    margin-top: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: $white;
+  }
+
+  .description__complexity {
+    text-align: center;
+  }
+}
