@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Algorithm Visualizer</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="shortcut icon" href="../img/undraw_hologram_fjwp.png" />
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <header>
+      <div>
+        <h1><a href="/">VisuAl</a></h1>
+      </div>
+      <ul>
+        <li>
+          <a href="BubbleSort.html">Sorting Algorithms</a>
+        </li>
+        <li class="active"><a href="Array.html">Datastructures</a></li>
+        <li><a href="contact.asp">About</a></li>
+      </ul>
+    </header>
+    <div class="dropdown">
+      <button class="dropdown__button" onclick="toggleDropdown()">
+        Data Structures
+        <i class="fas fa-angle-down"></i>
+      </button>
+      <div class="dropdown__content" id="dropdown__links">
+        <a class="dropdown__active" href="Array.html">Array</a>
+        <a href="LinkedList.html">Linked List</a>
+        <!-- <a href="SelectionSort.html">Selection Sort</a>
+        <a href="InsertionSort.html">Insertion Sort</a>
+        <a href="MergeSort.html">Merge Sort</a>
+        <a href="QuickSort.html">Quick Sort</a> -->
+      </div>
+    </div>
+    <div class="canvas">
+      <h1>Array</h1>
+      <div id="canvas__inner"></div>
+      <div class="canvas__input__inner">
+        <h2>Edit value at index:</h2>
+        <div class="canvas__input__field">
+          <div>
+            <div class="array__input">
+              <h3>Array [</h3>
+              <input
+                class="array__data"
+                id="array__data__index"
+                type="number"
+              />
+              <h3>] =</h3>
+            </div>
+          </div>
+          <div>
+            <div class="array__input">
+              <input class="array__data" id="array__data__value" />
+            </div>
+          </div>
+          <div class="canvas__input__button">
+            <button class="submit__data" onclick="indexOfArray()">
+              Add
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="canvas__input">
+        <div class="canvas__input__inner">
+          <h2>Array.push</h2>
+          <p>Add a value to the end</p>
+          <div class="canvas__input__field">
+            <div>
+              <input class="sort__data" id="array__data__push" />
+            </div>
+            <div class="canvas__input__button">
+              <button class="submit__data" onclick="pushArray()">
+                Push
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="canvas__input__inner">
+          <h2>Array.pop</h2>
+          <p>Remove the last value</p>
+          <div class="canvas__input__field">
+            <div class="canvas__input__button">
+              <button class="submit__data" onclick="popArray()">
+                Pop
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="canvas__input__inner">
+          <h2>Array.unshift</h2>
+          <p>Add a value to the start</p>
+          <div class="canvas__input__field">
+            <div>
+              <input class="sort__data" id="array__data__unshift" />
+            </div>
+            <div class="canvas__input__button">
+              <button class="submit__data" onclick="unshiftArray()">
+                Unshift
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="canvas__input__inner">
+          <h2>Array.shift</h2>
+          <p>Remove the first value</p>
+          <div class="canvas__input__field">
+            <div class="canvas__input__button">
+              <button class="submit__data" onclick="shiftArray()">
+                Shift
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="canvas__input__inner">
+        <h2>Array.splice</h2>
+        <p>At start, remove a number of elements. Add elements after splice.</p>
+        <div class="canvas__input__field">
+          <div>
+            <div class="array__input">
+              <h3>Array.splice(</h3>
+              <div>
+                <p>Start</p>
+                <input
+                  class="array__data"
+                  id="array__data__splice__start"
+                  type="number"
+                />
+              </div>
+              <h3>,</h3>
+              <div>
+                <p># of Elements</p>
+                <input
+                  class="array__data"
+                  id="array__data__splice__end"
+                  type="number"
+                />
+                <p>(Optional)</p>
+              </div>
+              <h3>,</h3>
+              <div>
+                <p>Add Element</p>
+                <input class="array__data" id="array__data__splice__add" />
+                <p>(Optional)</p>
+              </div>
+              <h3>)</h3>
+            </div>
+          </div>
+
+          <div class="canvas__input__button">
+            <button class="submit__data" onclick="spliceArray()">
+              Add
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="description">
+      <h1>Whats goin on?</h1>
+      <p>
+        Array info
+      </p>
+      <h1>Performance</h1>
+      <h2>Time complexity</h2>
+      <p>
+        Array
+      </p>
+      <p class="description__complexity">
+        O(n^2)
+      </p>
+      <h2>Space complexity</h2>
+      <p>
+        Array
+      </p>
+      <p class="description__complexity">
+        O(1)
+      </p>
+      <a href="https://en.wikipedia.org/wiki/Bubble_sort"
+        ><h1>More Info...</h1></a
+      >
+    </div>
+    <script
+      src="https://kit.fontawesome.com/a9dd5ac0e6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+    <script src="../js/main.js" async defer></script>
+    <script src="../js/array/script.js" async defer></script>
+    <!-- <script src="../js/bubble/bubbleSortAlgo.js" async defer></script> -->
+  </body>
+</html>

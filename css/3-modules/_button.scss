@@ -15,6 +15,22 @@
   }
 }
 
+.dropdown .dropdown__button {
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: $primary;
+  margin: 0;
+  border-radius: 5px;
+
+  &:active {
+    background-color: $muted;
+  }
+}
+
 .canvas__input__button {
   @include d-flex-col;
   justify-content: center;

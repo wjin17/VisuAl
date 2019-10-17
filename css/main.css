@@ -248,18 +248,6 @@ header li a:hover {
   margin-left: 5%;
 }
 
-.dropdown .dropdown__button {
-  cursor: pointer;
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: #ca3e47;
-  margin: 0;
-  border-radius: 5px;
-}
-
 .dropdown__content {
   display: none;
   position: absolute;
@@ -313,9 +301,16 @@ header li a:hover {
           flex-direction: row;
   -ms-flex-flow: nowrap;
       flex-flow: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-@media (min-width: 681px) {
+.canvas__input__inner {
+  text-align: center;
+}
+
+@media (min-width: 769px) {
   .canvas__input {
     display: -webkit-box;
     /* OLD - iOS 6-, Safari 3.1-6, BB7 */
@@ -327,10 +322,14 @@ header li a:hover {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -ms-flex-flow: nowrap;
-        flex-flow: nowrap;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -ms-flex-flow: wrap;
+        flex-flow: wrap;
+    width: 100%;
+    -ms-flex-line-pack: start;
+        align-content: start;
+  }
+  .canvas__input .canvas__input__inner {
+    width: 50%;
   }
 }
 
@@ -340,6 +339,44 @@ header li a:hover {
   height: 20px;
   border: 1px solid #f1f1f1;
   border-radius: 5px;
+}
+
+.array__input {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-flow: nowrap;
+      flex-flow: nowrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.array__input h3 {
+  margin: auto 5px;
+}
+
+.array__input .sort__data {
+  margin: auto 5px;
+}
+
+.array__data {
+  width: 30px;
+  height: 20px;
+  border: 1px solid #f1f1f1;
+  border-radius: 5px;
+  text-align: center;
+  margin: auto 5px;
+}
+
+.input__error {
+  color: #ca3e47;
 }
 
 .landing__button {
@@ -356,6 +393,22 @@ header li a:hover {
 }
 
 .landing__button:active {
+  background-color: #525252;
+}
+
+.dropdown .dropdown__button {
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: #ca3e47;
+  margin: 0;
+  border-radius: 5px;
+}
+
+.dropdown .dropdown__button:active {
   background-color: #525252;
 }
 

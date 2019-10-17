@@ -1,11 +1,20 @@
 .canvas__input__field {
   @include d-flex-row;
+  justify-content: center;
 }
 
-@media (min-width: 681px) {
+.canvas__input__inner {
+  text-align: center;
+}
+
+@media (min-width: 769px) {
   .canvas__input {
-    @include d-flex-row;
-    justify-content: space-around;
+    @include d-flex-row-wrap;
+    align-content: start;
+
+    .canvas__input__inner {
+      width: 50%;
+    }
   }
 }
 
@@ -15,4 +24,31 @@
   height: 20px;
   border: 1px solid $white;
   border-radius: 5px;
+  //text-align: right;
+}
+
+.array__input {
+  @include d-flex-row;
+  align-content: center;
+
+  h3 {
+    margin: auto 5px;
+  }
+
+  .sort__data {
+    margin: auto 5px;
+  }
+}
+
+.array__data {
+  width: 30px;
+  height: 20px;
+  border: 1px solid $white;
+  border-radius: 5px;
+  text-align: center;
+  margin: auto 5px;
+}
+
+.input__error {
+  color: $primary;
 }

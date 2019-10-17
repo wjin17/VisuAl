@@ -4,18 +4,6 @@
   margin-left: 5%;
 }
 
-.dropdown .dropdown__button {
-  cursor: pointer;
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: $primary;
-  margin: 0;
-  border-radius: 5px;
-}
-
 .dropdown__content {
   display: none;
   position: absolute;

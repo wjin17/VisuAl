@@ -18,3 +18,9 @@ function windowResized() {
   canvasWidth = windowWidth * 0.9;
   loop();
 }
+
+// Error handling
+function clearError() {
+  var elements = document.querySelectorAll(".input__error");
+  elements.forEach(el => (el.innerText = null));
+}

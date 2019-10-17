@@ -82,48 +82,62 @@ function draw() {
 
 // User inputs
 function randomInput() {
+  clearError();
   var numRandom = document.getElementById("quick-sort__data__random").value;
   document.getElementById("quick-sort__data__user").value = null;
-  if (numRandom) {
-    tempFrame = null;
-    values = Array.from({ length: numRandom }, () =>
-      Math.floor(Math.random() * 100)
-    );
-    frames = [];
-    current = [];
+  if (numRandom.match(/^[0-9\s]*$/)) {
+    if (numRandom) {
+      numRandom = numRandom.replace(/\s*/g, "");
+      tempFrame = null;
+      values = Array.from({ length: numRandom }, () =>
+        Math.floor(Math.random() * 100)
+      );
+      frames = [];
+      current = [];
+    }
+    frames.push([...values]);
+    current.push([]);
+    quickSortAlgo(values, 0, values.length - 1);
+    frames.push([...values]);
+    current.push([]);
+    play = false;
+    slider.setAttribute("max", frames.length - 1);
+    slider.value = 0;
+    frameId = 0;
+    loop();
+  } else {
+    document.getElementById("quick-sort__random__data").innerText =
+      "Invalid input";
   }
-  frames.push([...values]);
-  current.push([]);
-  quickSortAlgo(values, 0, values.length - 1);
-  frames.push([...values]);
-  current.push([]);
-  play = false;
-  slider.setAttribute("max", frames.length - 1);
-  slider.value = 0;
-  frameId = 0;
-  loop();
 }
 
 function userInput() {
-  var userValues = document
-    .getElementById("quick-sort__data__user")
-    .value.split(",")
-    .map(Number);
+  clearError();
+  var userValues = document.getElementById("quick-sort__data__user").value;
   document.getElementById("quick-sort__data__random").value = null;
-  if (userValues[0]) {
-    tempFrame = null;
-    frames = [];
-    current = [];
-    values = userValues;
+  if (userValues.match(/^[0-9,\s]*$/)) {
+    var nums = userValues.split(",").map(num => {
+      if (num.match(/^[\s]*$/)) return 0;
+      return Number(num.replace(/\s*/g, ""));
+    });
+    if (nums) {
+      tempFrame = null;
+      frames = [];
+      current = [];
+      values = nums;
+    }
+    frames.push([...values]);
+    current.push([]);
+    quickSortAlgo(values, 0, values.length - 1);
+    frames.push([...values]);
+    current.push([]);
+    play = false;
+    slider.setAttribute("max", frames.length - 1);
+    slider.value = 0;
+    frameId = 0;
+    loop();
+  } else {
+    document.getElementById("quick-sort__user__data").innerText =
+      "Invalid input";
   }
-  frames.push([...values]);
-  current.push([]);
-  quickSortAlgo(values, 0, values.length - 1);
-  frames.push([...values]);
-  current.push([]);
-  play = false;
-  slider.setAttribute("max", frames.length - 1);
-  slider.value = 0;
-  frameId = 0;
-  loop();
 }

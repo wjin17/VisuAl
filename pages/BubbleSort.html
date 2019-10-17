@@ -12,6 +12,7 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../css/main.css" />
+    <link rel="shortcut icon" href="../img/undraw_hologram_fjwp.png" />
   </head>
   <body>
     <!--[if lt IE 7]>
@@ -28,7 +29,7 @@
         <li class="active">
           <a href="BubbleSort.html">Sorting Algorithms</a>
         </li>
-        <li><a href="news.asp">Datastructures</a></li>
+        <li><a href="Array.html">Datastructures</a></li>
         <li><a href="contact.asp">About</a></li>
       </ul>
     </header>
@@ -68,7 +69,7 @@
       <div class="canvas__input">
         <div class="canvas__input__inner">
           <h2>Generate Random Values</h2>
-          <p>Enter the number of random values you want to generate</p>
+          <p>Enter the number of random values to generate</p>
           <div class="canvas__input__field">
             <div>
               <input class="sort__data" id="bubble-sort__data__random" />
@@ -79,8 +80,9 @@
               </button>
             </div>
           </div>
+          <p class="input__error" id="bubble-sort__random__data"></p>
         </div>
-        <div>
+        <div class="canvas__input__inner">
           <h2>Input Your Own Values</h2>
           <p>Enter a list of numbers separated by a comma</p>
           <div class="canvas__input__field">
@@ -93,6 +95,7 @@
               </button>
             </div>
           </div>
+          <p class="input__error" id="bubble-sort__user__data"></p>
         </div>
       </div>
     </div>
