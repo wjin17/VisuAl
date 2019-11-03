@@ -93,3 +93,50 @@
     }
   }
 }
+
+.pathfinder__input {
+  @include d-flex-row-wrap;
+  justify-content: center;
+
+  .pathfinder__input__mode {
+    background-color: $primary;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px 10px;
+    cursor: pointer;
+
+    &.active {
+      background-color: $secondary;
+    }
+
+    &:active {
+      background-color: $muted;
+    }
+  }
+}
+
+.pathfinder__algorithm {
+  background-color: $primary;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 5px 10px;
+  cursor: pointer;
+
+  &.active {
+    background-color: $secondary;
+  }
+
+  &:active {
+    background-color: $muted;
+  }
+}

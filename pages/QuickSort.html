@@ -30,7 +30,8 @@
           <a href="BubbleSort.html">Sorting Algorithms</a>
         </li>
         <li><a href="Array.html">Datastructures</a></li>
-        <li><a href="contact.asp">About</a></li>
+        <li><a href="Pathfinding.html">Pathfinding</a></li>
+        <li><a href="About.html">About</a></li>
       </ul>
     </header>
     <div class="dropdown">
@@ -102,17 +103,25 @@
     <div class="description">
       <h1>Whats goin on?</h1>
       <p>
-        Quick sort works by selecting a pivot in an array, the last element in
-        this case. Each element is then compared to the pivot. If the value is
-        greater than the pivot, nothing happens and the algorithm moves onto the
-        next element, this list can be considered an array of values greater
-        than the pivot. If the element is smaller than the pivot, it is swapped
-        with the first element of the array of values greater than the pivot.
-        After the entire array has been traversed, the pivot is swapped with the
-        first value in the array of values greater than the pivot and the
-        function is called on the array of values smaller than the pivot as well
-        as the array of values greater than the pivot. Each subsequent array has
-        its own pivot and the function is repeated until it is sorted.
+        Quick sort is another recursive algorithm, however, works quite
+        differently to merge sort. First, a random element in the input array is
+        designated as the pivot. In this case, the pivot is always the last
+        element of the input array. Next the function iterates through the
+        entire array and sorts it in-place into two arrays: 1. Values smaller
+        than the pivot. 2. Values larger than the pivot. Then the algorithm
+        places the pivot in the correct space in between and is called on the
+        subsequent groups and is repeated until the entire array has been
+        sorted. In this example, the function achieves this by initializaing a
+        low index and current element as 0, the first element in the array. If
+        the current element is smaller than the pivot, it is swapped with the
+        element at the low position and the current element is incremented to
+        the next position. If the element is larger than the pivot, it moves on
+        to the next element without updating the low position. After the entire
+        array has been covered, the pivot is then swapped with the element right
+        after the low position. The algorithm is then called again on the two
+        sections, one from the start of the smaller section to the pivot and one
+        from the pivot to the end of the larger section. This process is
+        repeated until the entire array has been sorted.
       </p>
       <h1>Performance</h1>
       <h2>Time complexity</h2>

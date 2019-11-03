@@ -30,7 +30,8 @@
           <a href="BubbleSort.html">Sorting Algorithms</a>
         </li>
         <li><a href="Array.html">Datastructures</a></li>
-        <li><a href="contact.asp">About</a></li>
+        <li><a href="Pathfinding.html">Pathfinding</a></li>
+        <li><a href="About.html">About</a></li>
       </ul>
     </header>
     <div class="dropdown">
@@ -103,15 +104,16 @@
       <h1>Whats goin on?</h1>
       <p>
         Merge sort is an algorithm that utilizes recursion. The function splits
-        the array and calls itself on the two halves. The function merges the
-        two halves and returns a combined sorted array. This process is then
-        repeated until each subsequent array to be put into the function again
-        only contains a single value. Then the function returns the single value
-        array and begins the second step which merges it with its corresponding
-        half. During the merge, both arrays will be iterated through and
-        combined in increasing order to a bigger array which is then returned by
-        the function. This process is repeated until the original array is
-        rebuilt sorted.
+        the array into halves and calls itself on each half. It then merges the
+        the result of those functions and returns a combined sorted array.
+        Because the algorithm first divides the input array, each subsequent
+        call occurs on only half of the original. This process repeats until the
+        algorithm is being called on an array with only a single element at
+        which point, the function calls to begin to resolve. The previous
+        function call receives the resolved single value arrays and merges them
+        in order of the desired sorting pattern. The function then returns this
+        sorted array and the previous function call repeats the process until
+        the entire array has been rebuilt sorted.
       </p>
       <h1>Performance</h1>
       <h2>Time complexity</h2>

@@ -12,3 +12,46 @@
     margin: 10px 10px;
   }
 }
+
+.pathfinder__overlay {
+  cursor: pointer;
+  position: absolute;
+  margin-left: 7%;
+  height: 460px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.pathfinder__grid {
+  height: 460px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 314px) {
+  .pathfinder__overlay {
+    width: 282px;
+  }
+  .pathfinder__grid {
+    width: 282px;
+  }
+}
+
+@media (min-width: 414px) {
+  .pathfinder__overlay {
+    width: 372px;
+  }
+  .pathfinder__grid {
+    width: 372px;
+  }
+}
+
+@media (min-width: 768px) {
+  .pathfinder__overlay {
+    width: 692px;
+  }
+  .pathfinder__grid {
+    width: 692px;
+  }
+}

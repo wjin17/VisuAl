@@ -288,6 +288,49 @@ header li a:hover {
   margin: 10px 10px;
 }
 
+.pathfinder__overlay {
+  cursor: pointer;
+  position: absolute;
+  margin-left: 7%;
+  height: 460px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.pathfinder__grid {
+  height: 460px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 314px) {
+  .pathfinder__overlay {
+    width: 282px;
+  }
+  .pathfinder__grid {
+    width: 282px;
+  }
+}
+
+@media (min-width: 414px) {
+  .pathfinder__overlay {
+    width: 372px;
+  }
+  .pathfinder__grid {
+    width: 372px;
+  }
+}
+
+@media (min-width: 768px) {
+  .pathfinder__overlay {
+    width: 692px;
+  }
+  .pathfinder__grid {
+    width: 692px;
+  }
+}
+
 .canvas__input__field {
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
@@ -376,6 +419,11 @@ header li a:hover {
 }
 
 .input__error {
+  color: #ca3e47;
+}
+
+.pathfinder__error {
+  text-align: center;
   color: #ca3e47;
 }
 
@@ -500,6 +548,67 @@ header li a:hover {
   text-decoration: none;
   color: #f1f1f1;
   cursor: pointer;
+}
+
+.pathfinder__input {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pathfinder__input .pathfinder__input__mode {
+  background-color: #ca3e47;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 5px 10px;
+  cursor: pointer;
+}
+
+.pathfinder__input .pathfinder__input__mode.active {
+  background-color: #414141;
+}
+
+.pathfinder__input .pathfinder__input__mode:active {
+  background-color: #525252;
+}
+
+.pathfinder__algorithm {
+  background-color: #ca3e47;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 5px 10px;
+  cursor: pointer;
+}
+
+.pathfinder__algorithm.active {
+  background-color: #414141;
+}
+
+.pathfinder__algorithm:active {
+  background-color: #525252;
 }
 
 .canvas__slider {
@@ -658,6 +767,19 @@ header li a:hover {
 
 .description .description__complexity {
   text-align: center;
+}
+
+.center {
+  text-align: center;
+}
+
+a.about__link {
+  font-weight: bold;
+  color: #ca3e47;
+}
+
+i {
+  margin: 0 10px;
 }
 
 .active {

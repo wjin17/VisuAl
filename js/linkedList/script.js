@@ -56,7 +56,7 @@ function draw() {
     stroke(0);
 
     // Node
-    fill("#FFFFFF");
+    fill("#F1F1F1");
     rect(
       colOffset * boxWidth + boxWidth / 10,
       rowOffset * 88 + 15,

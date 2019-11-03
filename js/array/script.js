@@ -1,6 +1,7 @@
 let canvas;
 let canvasWidth;
 let drawn = false;
+let ugh = false;
 
 let array = []; //[1, 2, 3, 5, 6, 4, 3, 6, 8];
 let arrayFrame = 0;
@@ -14,6 +15,11 @@ function setup() {
 }
 
 function draw() {
+  if (array.length == 0) {
+    clear();
+    drawn = false;
+  }
+
   if (!drawn) {
     let xtShift = canvasWidth * 0.02 < 14 ? 14 : canvasWidth * 0.02;
     let xblShift = canvasWidth * 0.09 < 50 ? 50 : canvasWidth * 0.09;
@@ -33,6 +39,7 @@ function draw() {
   let arrayX = (canvasWidth * 0.83) / array.length;
   let xShift = canvasWidth * 0.12 < 54 ? 54 : canvasWidth * 0.12;
   stroke("#525252");
+
   if (arrayFrame != array.length) {
     while (arrayFrame < array.length) {
       fill("#f1f1f1");
@@ -107,7 +114,6 @@ function spliceArray() {
   var spliceAdd = document
     .getElementById("array__data__splice__add")
     .value.split(",");
-  console.log(spliceAdd);
   if (spliceStart && spliceEnd && spliceAdd) {
     array.splice(spliceStart, spliceEnd, spliceAdd);
   }

@@ -1,6 +1,7 @@
 # VisuAl
 
 This is a website for visualizing sorting algorithms. Still in construction!
+[live demo](https://relaxed-galileo-1e6e09.netlify.com/)
 
 ## About
 
