@@ -1,19 +1,25 @@
 # VisuAl
 
-This is a website for visualizing sorting algorithms. Still in construction!
-[live demo](https://relaxed-galileo-1e6e09.netlify.com/)
+This is a website for visualizing sorting algorithms.
+[live demo](https://visualapp.netlify.com/)
 
 ## About
 
 This website was written using html, scss, and plain javascript. The visuals are creating using the [p5js library](https://p5js.org/).
 
+### Sorting
+![alt text](https://raw.githubusercontent.com/wjin17/VisuAl/master/img/BubbleSortGif.gif)
+
+### Pathfinding
+![alt text](https://raw.githubusercontent.com/wjin17/VisuAl/master/img/DijkstraGif.gif)
+
 ## Running a local instance
 
-Not quite sure who would want to do this but hey, who knows? Since these are just static files, there are a variety of ways to get a copy running on your computer.
+Since these are just static files, there are a variety of ways to get a copy running on your computer.
 
 ### Prerequisites
 
-Obviously, the first step is to get the files. Copy and paste the following line into your favorite terminal.
+The first step is to get the files. Copy and paste the following line into your favorite terminal.
 
 ```
 git clone https://github.com/wjin17/VisuAl.git
