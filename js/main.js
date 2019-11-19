@@ -14,8 +14,8 @@ window.onclick = function(e) {
 
 // Window
 function windowResized() {
-  canvas.size(windowWidth * 0.9, 250);
-  canvasWidth = windowWidth * 0.9;
+  canvasWidth = windowWidth * 0.9 < 1152 ? windowWidth * 0.9 : 1152;
+  canvas.size(canvasWidth, 250);
   loop();
 }
 

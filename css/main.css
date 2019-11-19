@@ -7,6 +7,11 @@ body {
   color: #f1f1f1;
 }
 
+.main-container {
+  margin: auto;
+  max-width: 1280px;
+}
+
 .d-flex-row {
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
@@ -126,6 +131,7 @@ body {
   -ms-flex-line-pack: start;
       align-content: flex-start;
   margin: 50px auto;
+  max-width: 90%;
 }
 
 @media screen and (max-width: 414px) {

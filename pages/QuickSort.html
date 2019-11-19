@@ -21,128 +21,130 @@
         <a href="#">upgrade your browser</a> to improve your experience.
       </p>
     <![endif]-->
-    <header>
-      <div>
-        <h1><a href="/">VisuAl</a></h1>
-      </div>
-      <ul>
-        <li class="active">
-          <a href="BubbleSort.html">Sorting Algorithms</a>
-        </li>
-        <li><a href="Array.html">Datastructures</a></li>
-        <li><a href="Pathfinding.html">Pathfinding</a></li>
-        <li><a href="About.html">About</a></li>
-      </ul>
-    </header>
-    <div class="dropdown">
-      <button class="dropdown__button" onclick="toggleDropdown()">
-        Algorithms
-        <i class="fas fa-angle-down"></i>
-      </button>
-      <div class="dropdown__content" id="dropdown__links">
-        <a href="BubbleSort.html">Bubble Sort</a>
-        <a href="SelectionSort.html">Selection Sort</a>
-        <a href="InsertionSort.html">Insertion Sort</a>
-        <a href="MergeSort.html">Merge Sort</a>
-        <a class="dropdown__active" href="QuickSort.html">Quick Sort</a>
-      </div>
-    </div>
-    <div class="canvas">
-      <h1>Quick Sort</h1>
-      <div id="canvas__inner"></div>
-      <div class="canvas__slider">
-        <div class="canvas__slider__inner">
-          <input
-            type="range"
-            min="0"
-            max="100"
-            value="0"
-            class="slider"
-            id="slider__input"
-          />
+    <div class="main-container">
+      <header>
+        <div>
+          <h1><a href="/">VisuAl</a></h1>
         </div>
-        <div class="play">
-          <button class="play__button" id="play__button__id" type="button">
-            <span id="play__toggle"></span>
-          </button>
+        <ul>
+          <li class="active">
+            <a href="BubbleSort.html">Sorting</a>
+          </li>
+          <li><a href="Array.html">Datastructures</a></li>
+          <li><a href="Pathfinding.html">Pathfinding</a></li>
+          <li><a href="About.html">About</a></li>
+        </ul>
+      </header>
+      <div class="dropdown">
+        <button class="dropdown__button" onclick="toggleDropdown()">
+          Algorithms
+          <i class="fas fa-angle-down"></i>
+        </button>
+        <div class="dropdown__content" id="dropdown__links">
+          <a href="BubbleSort.html">Bubble Sort</a>
+          <a href="SelectionSort.html">Selection Sort</a>
+          <a href="InsertionSort.html">Insertion Sort</a>
+          <a href="MergeSort.html">Merge Sort</a>
+          <a class="dropdown__active" href="QuickSort.html">Quick Sort</a>
         </div>
       </div>
-      <div class="canvas__input">
-        <div class="canvas__input__inner">
-          <h2>Generate Random Values</h2>
-          <p>Enter the number of random values to generate</p>
-          <div class="canvas__input__field">
-            <div>
-              <input class="sort__data" id="quick-sort__data__random" />
-            </div>
-            <div class="canvas__input__button">
-              <button class="submit__data" onclick="randomInput()">
-                Generate
-              </button>
-            </div>
+      <div class="canvas">
+        <h1>Quick Sort</h1>
+        <div id="canvas__inner"></div>
+        <div class="canvas__slider">
+          <div class="canvas__slider__inner">
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              class="slider"
+              id="slider__input"
+            />
           </div>
-          <p class="input__error" id="quick-sort__random__data"></p>
-        </div>
-        <div class="canvas__input__inner">
-          <h2>Input Your Own Values</h2>
-          <p>Enter a list of numbers separated by a comma</p>
-          <div class="canvas__input__field">
-            <div>
-              <input class="sort__data" id="quick-sort__data__user" />
-            </div>
-            <div class="canvas__input__button">
-              <button class="submit__data" onclick="userInput()">
-                Submit
-              </button>
-            </div>
+          <div class="play">
+            <button class="play__button" id="play__button__id" type="button">
+              <span id="play__toggle"></span>
+            </button>
           </div>
-          <p class="input__error" id="quick-sort__user__data"></p>
+        </div>
+        <div class="canvas__input">
+          <div class="canvas__input__inner">
+            <h2>Generate Random Values</h2>
+            <p>Enter the number of random values to generate</p>
+            <div class="canvas__input__field">
+              <div>
+                <input class="sort__data" id="quick-sort__data__random" />
+              </div>
+              <div class="canvas__input__button">
+                <button class="submit__data" onclick="randomInput()">
+                  Generate
+                </button>
+              </div>
+            </div>
+            <p class="input__error" id="quick-sort__random__data"></p>
+          </div>
+          <div class="canvas__input__inner">
+            <h2>Input Your Own Values</h2>
+            <p>Enter a list of numbers separated by a comma</p>
+            <div class="canvas__input__field">
+              <div>
+                <input class="sort__data" id="quick-sort__data__user" />
+              </div>
+              <div class="canvas__input__button">
+                <button class="submit__data" onclick="userInput()">
+                  Submit
+                </button>
+              </div>
+            </div>
+            <p class="input__error" id="quick-sort__user__data"></p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="description">
-      <h1>Whats goin on?</h1>
-      <p>
-        Quick sort is another recursive algorithm, however, works quite
-        differently to merge sort. First, a random element in the input array is
-        designated as the pivot. In this case, the pivot is always the last
-        element of the input array. Next the function iterates through the
-        entire array and sorts it in-place into two arrays: 1. Values smaller
-        than the pivot. 2. Values larger than the pivot. Then the algorithm
-        places the pivot in the correct space in between and is called on the
-        subsequent groups and is repeated until the entire array has been
-        sorted. In this example, the function achieves this by initializaing a
-        low index and current element as 0, the first element in the array. If
-        the current element is smaller than the pivot, it is swapped with the
-        element at the low position and the current element is incremented to
-        the next position. If the element is larger than the pivot, it moves on
-        to the next element without updating the low position. After the entire
-        array has been covered, the pivot is then swapped with the element right
-        after the low position. The algorithm is then called again on the two
-        sections, one from the start of the smaller section to the pivot and one
-        from the pivot to the end of the larger section. This process is
-        repeated until the entire array has been sorted.
-      </p>
-      <h1>Performance</h1>
-      <h2>Time complexity</h2>
-      <p>
-        Because each subsequent call iterates through the entire array, and each
-        subsequent array is approximately half of the original, the time
-        complexity of this algorithm is
-      </p>
-      <p class="description__complexity">O(nlog(n))</p>
-      <h2>Space complexity</h2>
-      <p>
-        Quick sort creates a stack for each call of the function which only
-        needs to be called on each array. The number of arrays decreases
-        logarithmically so the space complexity is
-      </p>
-      <p class="description__complexity">
-        O(log(n))
-      </p>
-      <a href="https://en.wikipedia.org/wiki/Selection_sort"
-        ><h1>More Info...</h1></a
-      >
+      <div class="description">
+        <h1>Whats goin on?</h1>
+        <p>
+          Quick sort is another recursive algorithm, however, works quite
+          differently to merge sort. First, a random element in the input array
+          is designated as the pivot. In this case, the pivot is always the last
+          element of the input array. Next the function iterates through the
+          entire array and sorts it in-place into two arrays: 1. Values smaller
+          than the pivot. 2. Values larger than the pivot. Then the algorithm
+          places the pivot in the correct space in between and is called on the
+          subsequent groups and is repeated until the entire array has been
+          sorted. In this example, the function achieves this by initializaing a
+          low index and current element as 0, the first element in the array. If
+          the current element is smaller than the pivot, it is swapped with the
+          element at the low position and the current element is incremented to
+          the next position. If the element is larger than the pivot, it moves
+          on to the next element without updating the low position. After the
+          entire array has been covered, the pivot is then swapped with the
+          element right after the low position. The algorithm is then called
+          again on the two sections, one from the start of the smaller section
+          to the pivot and one from the pivot to the end of the larger section.
+          This process is repeated until the entire array has been sorted.
+        </p>
+        <h1>Performance</h1>
+        <h2>Time complexity</h2>
+        <p>
+          Because each subsequent call iterates through the entire array, and
+          each subsequent array is approximately half of the original, the time
+          complexity of this algorithm is
+        </p>
+        <p class="description__complexity">O(nlog(n))</p>
+        <h2>Space complexity</h2>
+        <p>
+          Quick sort creates a stack for each call of the function which only
+          needs to be called on each array. The number of arrays decreases
+          logarithmically so the space complexity is
+        </p>
+        <p class="description__complexity">
+          O(log(n))
+        </p>
+        <a href="https://en.wikipedia.org/wiki/Selection_sort"
+          ><h1>More Info...</h1></a
+        >
+      </div>
     </div>
     <script
       src="https://kit.fontawesome.com/a9dd5ac0e6.js"

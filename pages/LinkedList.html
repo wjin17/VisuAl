@@ -21,111 +21,111 @@
         <a href="#">upgrade your browser</a> to improve your experience.
       </p>
     <![endif]-->
-    <header>
-      <div>
-        <h1><a href="/">VisuAl</a></h1>
+    <div class="main-container">
+      <header>
+        <div>
+          <h1><a href="/">VisuAl</a></h1>
+        </div>
+        <ul>
+          <li>
+            <a href="BubbleSort.html">Sorting</a>
+          </li>
+          <li class="active"><a href="Array.html">Datastructures</a></li>
+          <li><a href="Pathfinding.html">Pathfinding</a></li>
+          <li><a href="About.html">About</a></li>
+        </ul>
+      </header>
+      <div class="dropdown">
+        <button class="dropdown__button" onclick="toggleDropdown()">
+          Data Structures
+          <i class="fas fa-angle-down"></i>
+        </button>
+        <div class="dropdown__content" id="dropdown__links">
+          <a href="Array.html">Array</a>
+          <a class="dropdown__active" href="LinkedList.html">Linked List</a>
+          <!-- <a href="BinarySearchTree.html">Binary Search Tree</a> -->
+        </div>
       </div>
-      <ul>
-        <li>
-          <a href="BubbleSort.html">Sorting Algorithms</a>
-        </li>
-        <li class="active"><a href="Array.html">Datastructures</a></li>
-        <li><a href="Pathfinding.html">Pathfinding</a></li>
-        <li><a href="About.html">About</a></li>
-      </ul>
-    </header>
-    <div class="dropdown">
-      <button class="dropdown__button" onclick="toggleDropdown()">
-        Data Structures
-        <i class="fas fa-angle-down"></i>
-      </button>
-      <div class="dropdown__content" id="dropdown__links">
-        <a href="Array.html">Array</a>
-        <a class="dropdown__active" href="LinkedList.html">Linked List</a>
-        <!-- <a href="BinarySearchTree.html">Binary Search Tree</a> -->
-      </div>
-    </div>
-    <div class="canvas">
-      <h1>Single Linked List</h1>
-      <div id="canvas__inner"></div>
-      <div class="canvas__input__inner">
+      <div class="canvas">
+        <h1>Single Linked List</h1>
+        <div id="canvas__inner"></div>
         <div class="canvas__input__inner">
-          <h2>Add Value</h2>
-          <p>Add a value to the linked list</p>
-          <div class="canvas__input__field">
-            <div>
-              <input class="sort__data" id="linked-list__data__add" />
-            </div>
-            <div class="canvas__input__button">
-              <button class="submit__data" onclick="addValue()">
-                Add
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="canvas__input">
           <div class="canvas__input__inner">
-            <h2>Remove Node</h2>
-            <p>Remove the node at the position</p>
+            <h2>Add Value</h2>
+            <p>Add a value to the linked list</p>
             <div class="canvas__input__field">
               <div>
-                <input
-                  class="sort__data"
-                  id="linked-list__data__remove__node"
-                />
+                <input class="sort__data" id="linked-list__data__add" />
               </div>
               <div class="canvas__input__button">
-                <button class="submit__data" onclick="removeNode()">
-                  Remove
+                <button class="submit__data" onclick="addValue()">
+                  Add
                 </button>
               </div>
             </div>
-            <p class="input__error" id="linked-list__remove__node"></p>
           </div>
-          <div class="canvas__input__inner">
-            <h2>Remove Value</h2>
-            <p>Remove the first node with the value</p>
-            <div class="canvas__input__field">
-              <div>
-                <input
-                  class="sort__data"
-                  id="linked-list__data__remove__value"
-                />
+          <div class="canvas__input">
+            <div class="canvas__input__inner">
+              <h2>Remove Node</h2>
+              <p>Remove the node at the position</p>
+              <div class="canvas__input__field">
+                <div>
+                  <input
+                    class="sort__data"
+                    id="linked-list__data__remove__node"
+                  />
+                </div>
+                <div class="canvas__input__button">
+                  <button class="submit__data" onclick="removeNode()">
+                    Remove
+                  </button>
+                </div>
               </div>
-              <div class="canvas__input__button">
-                <button class="submit__data" onclick="removeValue()">
-                  Remove
-                </button>
-              </div>
+              <p class="input__error" id="linked-list__remove__node"></p>
             </div>
-            <p class="input__error" id="linked-list__remove__value"></p>
+            <div class="canvas__input__inner">
+              <h2>Remove Value</h2>
+              <p>Remove the first node with the value</p>
+              <div class="canvas__input__field">
+                <div>
+                  <input
+                    class="sort__data"
+                    id="linked-list__data__remove__value"
+                  />
+                </div>
+                <div class="canvas__input__button">
+                  <button class="submit__data" onclick="removeValue()">
+                    Remove
+                  </button>
+                </div>
+              </div>
+              <p class="input__error" id="linked-list__remove__value"></p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="description">
-      <h1>Whats goin on?</h1>
-      <p>
-        Linked list info
-      </p>
-      <h1>Performance</h1>
-      <h2>Time complexity</h2>
-      <p>
-        Linked List
-      </p>
-      <p class="description__complexity">
-        O(n^2)
-      </p>
-      <h2>Space complexity</h2>
-      <p>
-        Linked List
-      </p>
-      <p class="description__complexity">
-        O(1)
-      </p>
-      <a href="https://en.wikipedia.org/wiki/Bubble_sort"
-        ><h1>More Info...</h1></a
-      >
+      <div class="description">
+        <h1>Linked List Info</h1>
+        <p>From Wikipedia:</p>
+        <p>
+          In computer science, a linked list is a linear collection of data
+          elements, whose order is not given by their physical placement in
+          memory. Instead, each element points to the next. It is a data
+          structure consisting of a collection of nodes which together represent
+          a sequence. In its most basic form, each node contains: data, and a
+          reference (in other words, a link) to the next node in the sequence.
+          This structure allows for efficient insertion or removal of elements
+          from any position in the sequence during iteration. More complex
+          variants add additional links, allowing more efficient insertion or
+          removal of nodes at arbitrary positions. A drawback of linked lists is
+          that access time is linear (and difficult to pipeline). Faster access,
+          such as random access, is not feasible. Arrays have better cache
+          locality compared to linked lists.
+        </p>
+        <a href="https://en.wikipedia.org/wiki/Bubble_sort"
+          ><h1>More Info...</h1></a
+        >
+      </div>
     </div>
     <script
       src="https://kit.fontawesome.com/a9dd5ac0e6.js"

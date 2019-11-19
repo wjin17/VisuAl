@@ -31,7 +31,7 @@ playButton.onclick = function() {
 
 // Canvas
 function setup() {
-  canvasWidth = windowWidth * 0.9;
+  canvasWidth = windowWidth * 0.9 < 1152 ? windowWidth * 0.9 : 1152;
   canvas = createCanvas(canvasWidth, 250);
   canvas.parent("canvas__inner");
   background("#525252");

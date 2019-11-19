@@ -21,120 +21,122 @@
         <a href="#">upgrade your browser</a> to improve your experience.
       </p>
     <![endif]-->
-    <header>
-      <div>
-        <h1><a href="/">VisuAl</a></h1>
-      </div>
-      <ul>
-        <li class="active">
-          <a href="BubbleSort.html">Sorting Algorithms</a>
-        </li>
-        <li><a href="Array.html">Datastructures</a></li>
-        <li><a href="Pathfinding.html">Pathfinding</a></li>
-        <li><a href="About.html">About</a></li>
-      </ul>
-    </header>
-    <div class="dropdown">
-      <button class="dropdown__button" onclick="toggleDropdown()">
-        Algorithms
-        <i class="fas fa-angle-down"></i>
-      </button>
-      <div class="dropdown__content" id="dropdown__links">
-        <a href="BubbleSort.html">Bubble Sort</a>
-        <a href="SelectionSort.html">Selection Sort</a>
-        <a href="InsertionSort.html">Insertion Sort</a>
-        <a class="dropdown__active" href="MergeSort.html">Merge Sort</a>
-        <a href="QuickSort.html">Quick Sort</a>
-      </div>
-    </div>
-    <div class="canvas">
-      <h1>Merge Sort</h1>
-      <div id="canvas__inner"></div>
-      <div class="canvas__slider">
-        <div class="canvas__slider__inner">
-          <input
-            type="range"
-            min="0"
-            max="100"
-            value="0"
-            class="slider"
-            id="slider__input"
-          />
+    <div class="main-container">
+      <header>
+        <div>
+          <h1><a href="/">VisuAl</a></h1>
         </div>
-        <div class="play">
-          <button class="play__button" id="play__button__id" type="button">
-            <span id="play__toggle"></span>
-          </button>
+        <ul>
+          <li class="active">
+            <a href="BubbleSort.html">Sorting</a>
+          </li>
+          <li><a href="Array.html">Datastructures</a></li>
+          <li><a href="Pathfinding.html">Pathfinding</a></li>
+          <li><a href="About.html">About</a></li>
+        </ul>
+      </header>
+      <div class="dropdown">
+        <button class="dropdown__button" onclick="toggleDropdown()">
+          Algorithms
+          <i class="fas fa-angle-down"></i>
+        </button>
+        <div class="dropdown__content" id="dropdown__links">
+          <a href="BubbleSort.html">Bubble Sort</a>
+          <a href="SelectionSort.html">Selection Sort</a>
+          <a href="InsertionSort.html">Insertion Sort</a>
+          <a class="dropdown__active" href="MergeSort.html">Merge Sort</a>
+          <a href="QuickSort.html">Quick Sort</a>
         </div>
       </div>
-      <div class="canvas__input">
-        <div class="canvas__input__inner">
-          <h2>Generate Random Values</h2>
-          <p>Enter the number of random values to generate</p>
-          <div class="canvas__input__field">
-            <div>
-              <input class="sort__data" id="merge-sort__data__random" />
-            </div>
-            <div class="canvas__input__button">
-              <button class="submit__data" onclick="randomInput()">
-                Generate
-              </button>
-            </div>
+      <div class="canvas">
+        <h1>Merge Sort</h1>
+        <div id="canvas__inner"></div>
+        <div class="canvas__slider">
+          <div class="canvas__slider__inner">
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              class="slider"
+              id="slider__input"
+            />
           </div>
-          <p class="input__error" id="merge-sort__random__data"></p>
-        </div>
-        <div class="canvas__input__inner">
-          <h2>Input Your Own Values</h2>
-          <p>Enter a list of numbers separated by a comma</p>
-          <div class="canvas__input__field">
-            <div>
-              <input class="sort__data" id="merge-sort__data__user" />
-            </div>
-            <div class="canvas__input__button">
-              <button class="submit__data" onclick="userInput()">
-                Submit
-              </button>
-            </div>
+          <div class="play">
+            <button class="play__button" id="play__button__id" type="button">
+              <span id="play__toggle"></span>
+            </button>
           </div>
-          <p class="input__error" id="merge-sort__user__data"></p>
+        </div>
+        <div class="canvas__input">
+          <div class="canvas__input__inner">
+            <h2>Generate Random Values</h2>
+            <p>Enter the number of random values to generate</p>
+            <div class="canvas__input__field">
+              <div>
+                <input class="sort__data" id="merge-sort__data__random" />
+              </div>
+              <div class="canvas__input__button">
+                <button class="submit__data" onclick="randomInput()">
+                  Generate
+                </button>
+              </div>
+            </div>
+            <p class="input__error" id="merge-sort__random__data"></p>
+          </div>
+          <div class="canvas__input__inner">
+            <h2>Input Your Own Values</h2>
+            <p>Enter a list of numbers separated by a comma</p>
+            <div class="canvas__input__field">
+              <div>
+                <input class="sort__data" id="merge-sort__data__user" />
+              </div>
+              <div class="canvas__input__button">
+                <button class="submit__data" onclick="userInput()">
+                  Submit
+                </button>
+              </div>
+            </div>
+            <p class="input__error" id="merge-sort__user__data"></p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="description">
-      <h1>Whats goin on?</h1>
-      <p>
-        Merge sort is an algorithm that utilizes recursion. The function splits
-        the array into halves and calls itself on each half. It then merges the
-        the result of those functions and returns a combined sorted array.
-        Because the algorithm first divides the input array, each subsequent
-        call occurs on only half of the original. This process repeats until the
-        algorithm is being called on an array with only a single element at
-        which point, the function calls to begin to resolve. The previous
-        function call receives the resolved single value arrays and merges them
-        in order of the desired sorting pattern. The function then returns this
-        sorted array and the previous function call repeats the process until
-        the entire array has been rebuilt sorted.
-      </p>
-      <h1>Performance</h1>
-      <h2>Time complexity</h2>
-      <p>
-        Because each recursive call operates on only half the array, the size of
-        the array decreases logarithmically. Rebuilding the array occurs in a
-        single iteration through both arrays. This means that the time
-        complexity of this algorithm is
-      </p>
-      <p class="description__complexity">O(nlog(n))</p>
-      <h2>Space complexity</h2>
-      <p>
-        Merge sort combines two halves of an array into another array. This
-        means that the space complexity of this algorithm is
-      </p>
-      <p class="description__complexity">
-        O(n)
-      </p>
-      <a href="https://en.wikipedia.org/wiki/Merge_sort"
-        ><h1>More Info...</h1></a
-      >
+      <div class="description">
+        <h1>Whats goin on?</h1>
+        <p>
+          Merge sort is an algorithm that utilizes recursion. The function
+          splits the array into halves and calls itself on each half. It then
+          merges the the result of those functions and returns a combined sorted
+          array. Because the algorithm first divides the input array, each
+          subsequent call occurs on only half of the original. This process
+          repeats until the algorithm is being called on an array with only a
+          single element at which point, the function calls to begin to resolve.
+          The previous function call receives the resolved single value arrays
+          and merges them in order of the desired sorting pattern. The function
+          then returns this sorted array and the previous function call repeats
+          the process until the entire array has been rebuilt sorted.
+        </p>
+        <h1>Performance</h1>
+        <h2>Time complexity</h2>
+        <p>
+          Because each recursive call operates on only half the array, the size
+          of the array decreases logarithmically. Rebuilding the array occurs in
+          a single iteration through both arrays. This means that the time
+          complexity of this algorithm is
+        </p>
+        <p class="description__complexity">O(nlog(n))</p>
+        <h2>Space complexity</h2>
+        <p>
+          Merge sort combines two halves of an array into another array. This
+          means that the space complexity of this algorithm is
+        </p>
+        <p class="description__complexity">
+          O(n)
+        </p>
+        <a href="https://en.wikipedia.org/wiki/Merge_sort"
+          ><h1>More Info...</h1></a
+        >
+      </div>
     </div>
     <script
       src="https://kit.fontawesome.com/a9dd5ac0e6.js"

@@ -21,116 +21,121 @@
         <a href="#">upgrade your browser</a> to improve your experience.
       </p>
     <![endif]-->
-    <header>
-      <div>
-        <h1><a href="/">VisuAl</a></h1>
-      </div>
-      <ul>
-        <li class="active">
-          <a href="BubbleSort.html">Sorting Algorithms</a>
-        </li>
-        <li><a href="Array.html">Datastructures</a></li>
-        <li><a href="Pathfinding.html">Pathfinding</a></li>
-        <li><a href="About.html">About</a></li>
-      </ul>
-    </header>
-    <div class="dropdown">
-      <button class="dropdown__button" onclick="toggleDropdown()">
-        Algorithms
-        <i class="fas fa-angle-down"></i>
-      </button>
-      <div class="dropdown__content" id="dropdown__links">
-        <a href="BubbleSort.html">Bubble Sort</a>
-        <a href="SelectionSort.html">Selection Sort</a>
-        <a class="dropdown__active" href="InsertionSort.html">Insertion Sort</a>
-        <a href="MergeSort.html">Merge Sort</a>
-        <a href="QuickSort.html">Quick Sort</a>
-      </div>
-    </div>
-    <div class="canvas">
-      <h1>Insertion Sort</h1>
-      <div id="canvas__inner"></div>
-      <div class="canvas__slider">
-        <div class="canvas__slider__inner">
-          <input
-            type="range"
-            min="0"
-            max="100"
-            value="0"
-            class="slider"
-            id="slider__input"
-          />
+    <div class="main-container">
+      <header>
+        <div>
+          <h1><a href="/">VisuAl</a></h1>
         </div>
-        <div class="play">
-          <button class="play__button" id="play__button__id" type="button">
-            <span id="play__toggle"></span>
-          </button>
+        <ul>
+          <li class="active">
+            <a href="BubbleSort.html">Sorting</a>
+          </li>
+          <li><a href="Array.html">Datastructures</a></li>
+          <li><a href="Pathfinding.html">Pathfinding</a></li>
+          <li><a href="About.html">About</a></li>
+        </ul>
+      </header>
+      <div class="dropdown">
+        <button class="dropdown__button" onclick="toggleDropdown()">
+          Algorithms
+          <i class="fas fa-angle-down"></i>
+        </button>
+        <div class="dropdown__content" id="dropdown__links">
+          <a href="BubbleSort.html">Bubble Sort</a>
+          <a href="SelectionSort.html">Selection Sort</a>
+          <a class="dropdown__active" href="InsertionSort.html"
+            >Insertion Sort</a
+          >
+          <a href="MergeSort.html">Merge Sort</a>
+          <a href="QuickSort.html">Quick Sort</a>
         </div>
       </div>
-      <div class="canvas__input">
-        <div class="canvas__input__inner">
-          <h2>Generate Random Values</h2>
-          <p>Enter the number of random values to generate</p>
-          <div class="canvas__input__field">
-            <div>
-              <input class="sort__data" id="insertion-sort__data__random" />
-            </div>
-            <div class="canvas__input__button">
-              <button class="submit__data" onclick="randomInput()">
-                Generate
-              </button>
-            </div>
+      <div class="canvas">
+        <h1>Insertion Sort</h1>
+        <div id="canvas__inner"></div>
+        <div class="canvas__slider">
+          <div class="canvas__slider__inner">
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              class="slider"
+              id="slider__input"
+            />
           </div>
-          <p class="input__error" id="insertion-sort__random__data"></p>
-        </div>
-        <div class="canvas__input__inner">
-          <h2>Input Your Own Values</h2>
-          <p>Enter a list of numbers separated by a comma</p>
-          <div class="canvas__input__field">
-            <div>
-              <input class="sort__data" id="insertion-sort__data__user" />
-            </div>
-            <div class="canvas__input__button">
-              <button class="submit__data" onclick="userInput()">
-                Submit
-              </button>
-            </div>
+          <div class="play">
+            <button class="play__button" id="play__button__id" type="button">
+              <span id="play__toggle"></span>
+            </button>
           </div>
-          <p class="input__error" id="insertion-sort__user__data"></p>
+        </div>
+        <div class="canvas__input">
+          <div class="canvas__input__inner">
+            <h2>Generate Random Values</h2>
+            <p>Enter the number of random values to generate</p>
+            <div class="canvas__input__field">
+              <div>
+                <input class="sort__data" id="insertion-sort__data__random" />
+              </div>
+              <div class="canvas__input__button">
+                <button class="submit__data" onclick="randomInput()">
+                  Generate
+                </button>
+              </div>
+            </div>
+            <p class="input__error" id="insertion-sort__random__data"></p>
+          </div>
+          <div class="canvas__input__inner">
+            <h2>Input Your Own Values</h2>
+            <p>Enter a list of numbers separated by a comma</p>
+            <div class="canvas__input__field">
+              <div>
+                <input class="sort__data" id="insertion-sort__data__user" />
+              </div>
+              <div class="canvas__input__button">
+                <button class="submit__data" onclick="userInput()">
+                  Submit
+                </button>
+              </div>
+            </div>
+            <p class="input__error" id="insertion-sort__user__data"></p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="description">
-      <h1>Whats goin on?</h1>
-      <p>
-        Insertion sort is an algorithm that steps through an array and places
-        elements relative to the elements it has already passed. In other words,
-        every element behind the current one can be considered sorted.
-        Therefore, the if the current element is smaller than the previous
-        element, swap the two and repeat until the element is in the correct
-        position. If the current element is larger, increment the current
-        element to the next position. Repeat until all of the items are sorted.
-      </p>
-      <h1>Performance</h1>
-      <h2>Time complexity</h2>
-      <p>
-        Because each iteration has an additional iteration through the array
-        backwards, the time complexity of insertion sort is
-      </p>
-      <p class="description__complexity">
-        O(n^2)
-      </p>
-      <h2>Space complexity</h2>
-      <p>
-        Insertion sort only needs one additional space in memory to perform the
-        swap so its space complexity is
-      </p>
-      <p class="description__complexity">
-        O(1)
-      </p>
-      <a href="https://en.wikipedia.org/wiki/Insertion_sort"
-        ><h1>More Info...</h1></a
-      >
+      <div class="description">
+        <h1>Whats goin on?</h1>
+        <p>
+          Insertion sort is an algorithm that steps through an array and places
+          elements relative to the elements it has already passed. In other
+          words, every element behind the current one can be considered sorted.
+          Therefore, the if the current element is smaller than the previous
+          element, swap the two and repeat until the element is in the correct
+          position. If the current element is larger, increment the current
+          element to the next position. Repeat until all of the items are
+          sorted.
+        </p>
+        <h1>Performance</h1>
+        <h2>Time complexity</h2>
+        <p>
+          Because each iteration has an additional iteration through the array
+          backwards, the time complexity of insertion sort is
+        </p>
+        <p class="description__complexity">
+          O(n^2)
+        </p>
+        <h2>Space complexity</h2>
+        <p>
+          Insertion sort only needs one additional space in memory to perform
+          the swap so its space complexity is
+        </p>
+        <p class="description__complexity">
+          O(1)
+        </p>
+        <a href="https://en.wikipedia.org/wiki/Insertion_sort"
+          ><h1>More Info...</h1></a
+        >
+      </div>
     </div>
     <script
       src="https://kit.fontawesome.com/a9dd5ac0e6.js"

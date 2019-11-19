@@ -21,146 +21,149 @@
         <a href="#">upgrade your browser</a> to improve your experience.
       </p>
     <![endif]-->
-    <header>
-      <div>
-        <h1><a href="/">VisuAl</a></h1>
+    <div class="main-container">
+      <header>
+        <div>
+          <h1><a href="/">VisuAl</a></h1>
+        </div>
+        <ul>
+          <li>
+            <a href="BubbleSort.html">Sorting</a>
+          </li>
+          <li><a href="Array.html">Datastructures</a></li>
+          <li class="active"><a href="Pathfinding.html">Pathfinding</a></li>
+          <li><a href="About.html">About</a></li>
+        </ul>
+      </header>
+      <div class="canvas">
+        <div class="pathfinder__input">
+          <button
+            class="pathfinder__algorithm active"
+            id="dijkstra"
+            type="button"
+            onclick="setAlgorithm(`dijkstra`)"
+          >
+            Dijkstra
+          </button>
+          <button
+            class="pathfinder__algorithm"
+            id="astar"
+            type="button"
+            onclick="setAlgorithm(`astar`)"
+          >
+            A* Search
+          </button>
+        </div>
+        <div class="pathfinder__overlay"></div>
+        <div class="pathfinder__grid"><div id="canvas__inner"></div></div>
+        <p class="pathfinder__error" id="error__inner"></p>
+        <div class="pathfinder__input">
+          <button
+            class="pathfinder__input__mode active"
+            id="start"
+            type="button"
+            onclick="setMode(`start`)"
+          >
+            Set Start
+          </button>
+          <button
+            class="pathfinder__input__mode"
+            id="finish"
+            type="button"
+            onclick="setMode(`finish`)"
+          >
+            Set Finish
+          </button>
+          <button
+            class="pathfinder__input__mode"
+            id="wall"
+            type="button"
+            onclick="setMode(`wall`)"
+          >
+            Set Wall
+          </button>
+          <button
+            class="pathfinder__input__mode"
+            id="erase"
+            type="button"
+            onclick="setMode(`erase`)"
+          >
+            Erase
+          </button>
+          <button
+            class="pathfinder__input__mode"
+            type="button"
+            onclick="solveMap()"
+          >
+            Solve
+          </button>
+          <button
+            class="pathfinder__input__mode"
+            type="button"
+            onclick="clearBoard([`grid`,`wall`,`maze`]);"
+          >
+            Clear
+          </button>
+          <button
+            class="pathfinder__input__mode"
+            type="button"
+            onclick="generateMap()"
+          >
+            Generate Maze
+          </button>
+        </div>
       </div>
-      <ul>
-        <li>
-          <a href="BubbleSort.html">Sorting Algorithms</a>
-        </li>
-        <li><a href="Array.html">Datastructures</a></li>
-        <li class="active"><a href="Pathfinding.html">Pathfinding</a></li>
-        <li><a href="About.html">About</a></li>
-      </ul>
-    </header>
-    <div class="canvas">
-      <div class="pathfinder__input">
-        <button
-          class="pathfinder__algorithm active"
-          id="dijkstra"
-          type="button"
-          onclick="setAlgorithm(`dijkstra`)"
+      <div class="description" id="description">
+        <h1>Dijkstra's Algorithm</h1>
+        <p>
+          Djikstra's algorithm finds the shortest path between two nodes in a
+          graph. After a start and a finish node are defined, all of the nodes
+          are placed into a set for unvisited nodes. Each node is given a
+          distance upon creation, infinity, and the node that is set as the
+          start has its distance set to 0. Next, the algorithm can begin solving
+          for the shortest distance.
+        </p>
+        <ol>
+          <li>
+            The set of unvisited nodes is sorted by distance from least to
+            greatest
+          </li>
+          <li>
+            The first node in the unvisited set is removed and set as the
+            current node
+          </li>
+          <li>
+            If the current node is a wall, move onto the next node
+          </li>
+          <li>
+            If the current node's distance is infinity, this means that the
+            finish node is unreachable and the set of visited nodes is returned
+          </li>
+          <li>
+            If the current node is the finish node, return the set of visited
+            nodes
+          </li>
+          <li>
+            Otherwise, the current node is marked as visited. Next, it is added
+            to the set of visited nodes. Finally, the current neighbor's
+            neighbors have their distances set to the current node's distance +1
+            and their previous node set to the current node
+          </li>
+          <li>
+            Finally, steps 1-6 are repeated until either the finish node has
+            been found, the entire grid has been traversed, or the distance of
+            the current node is infinity, indicating that the finish is
+            unreachable
+          </li>
+        </ol>
+        <p>
+          If the finish node has been found, its previous nodes are traced back
+          to the start and the shortest path has been found
+        </p>
+        <a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm"
+          ><h1>More Info...</h1></a
         >
-          Dijkstra
-        </button>
-        <button
-          class="pathfinder__algorithm"
-          id="astar"
-          type="button"
-          onclick="setAlgorithm(`astar`)"
-        >
-          A* Search
-        </button>
       </div>
-      <div class="pathfinder__overlay"></div>
-      <div class="pathfinder__grid"><div id="canvas__inner"></div></div>
-      <p class="pathfinder__error" id="error__inner"></p>
-      <div class="pathfinder__input">
-        <button
-          class="pathfinder__input__mode active"
-          id="start"
-          type="button"
-          onclick="setMode(`start`)"
-        >
-          Set Start
-        </button>
-        <button
-          class="pathfinder__input__mode"
-          id="finish"
-          type="button"
-          onclick="setMode(`finish`)"
-        >
-          Set Finish
-        </button>
-        <button
-          class="pathfinder__input__mode"
-          id="wall"
-          type="button"
-          onclick="setMode(`wall`)"
-        >
-          Set Wall
-        </button>
-        <button
-          class="pathfinder__input__mode"
-          id="erase"
-          type="button"
-          onclick="setMode(`erase`)"
-        >
-          Erase
-        </button>
-        <button
-          class="pathfinder__input__mode"
-          type="button"
-          onclick="solveMap()"
-        >
-          Solve
-        </button>
-        <button
-          class="pathfinder__input__mode"
-          type="button"
-          onclick="clearBoard([`grid`,`wall`,`maze`]);"
-        >
-          Clear
-        </button>
-        <button
-          class="pathfinder__input__mode"
-          type="button"
-          onclick="generateMap()"
-        >
-          Generate Maze
-        </button>
-      </div>
-    </div>
-    <div class="description" id="description">
-      <h1>Dijkstra's Algorithm</h1>
-      <p>
-        Djikstra's algorithm finds the shortest path between two nodes in a
-        graph. After a start and a finish node are defined, all of the nodes are
-        placed into a set for unvisited nodes. Each node is given a distance
-        upon creation, infinity, and the node that is set as the start has its
-        distance set to 0. Next, the algorithm can begin solving for the
-        shortest distance.
-      </p>
-      <ol>
-        <li>
-          The set of unvisited nodes is sorted by distance from least to
-          greatest
-        </li>
-        <li>
-          The first node in the unvisited set is removed and set as the current
-          node
-        </li>
-        <li>
-          If the current node is a wall, move onto the next node
-        </li>
-        <li>
-          If the current node's distance is infinity, this means that the finish
-          node is unreachable and the set of visited nodes is returned
-        </li>
-        <li>
-          If the current node is the finish node, return the set of visited
-          nodes
-        </li>
-        <li>
-          Otherwise, the current node is marked as visited. Next, it is added to
-          the set of visited nodes. Finally, the current neighbor's neighbors
-          have their distances set to the current node's distance +1 and their
-          previous node set to the current node
-        </li>
-        <li>
-          Finally, steps 1-6 are repeated until either the finish node has been
-          found, the entire grid has been traversed, or the distance of the
-          current node is infinity, indicating that the finish is unreachable
-        </li>
-      </ol>
-      <p>
-        If the finish node has been found, its previous nodes are traced back to
-        the start and the shortest path has been found
-      </p>
-      <a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm"
-        ><h1>More Info...</h1></a
-      >
     </div>
     <script
       src="https://kit.fontawesome.com/a9dd5ac0e6.js"

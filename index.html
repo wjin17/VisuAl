@@ -21,76 +21,100 @@
         <a href="#">upgrade your browser</a> to improve your experience.
       </p>
     <![endif]-->
-    <header>
-      <div>
-        <h1><a href="/">VisuAl</a></h1>
+    <div class="main-container">
+      <header>
+        <div>
+          <h1><a href="/">VisuAl</a></h1>
+        </div>
+        <ul>
+          <li><a href="pages/BubbleSort.html">Sorting</a></li>
+          <li><a href="pages/Array.html">Datastructures</a></li>
+          <li><a href="pages/Pathfinding.html">Pathfinding</a></li>
+          <li><a href="pages/About.html">About</a></li>
+        </ul>
+      </header>
+      <div class="landing">
+        <img class="landing__image" src="img/MY_Coding_PNG.png" alt="coding" />
+        <div class="landing__text">
+          <h1>VisuAl</h1>
+          <p>
+            A coding project by an aspiring web developer.
+          </p>
+          <a class="landing__button" href="pages/BubbleSort.html"
+            >Sorting Algorithms</a
+          >
+        </div>
       </div>
-      <ul>
-        <li><a href="pages/BubbleSort.html">Sorting Algorithms</a></li>
-        <li><a href="pages/Array.html">Datastructures</a></li>
-        <li><a href="pages/Pathfinding.html">Pathfinding</a></li>
-        <li><a href="pages/About.html">About</a></li>
-      </ul>
-    </header>
-    <div class="landing">
-      <img class="landing__image" src="img/MY_Coding_PNG.png" alt="coding" />
-      <div class="landing__text">
-        <h1>VisuAl</h1>
-        <p>
-          VisuAl is a website designed to help me land a coding job... I mean
-          visualize a few sorting algorithms and datastructures! :)
-        </p>
-        <a class="landing__button" href="pages/BubbleSort.html"
-          >Sorting Algorithms</a
-        >
+      <h1 class="links__title">Algorithms</h1>
+      <div class="landing__links__inner">
+        <div class="landing__link">
+          <a href="pages/BubbleSort.html">
+            <img
+              src="img/BubbleSortStatic.png"
+              onmouseover="this.src='img/BubbleSortGif.gif'"
+              onmouseout="this.src='img/BubbleSortStatic.png'"
+            />
+          </a>
+        </div>
+        <div class="landing__link">
+          <a href="pages/SelectionSort.html">
+            <img
+              src="img/SelectionSortStatic.png"
+              onmouseover="this.src='img/SelectionSortGif.gif'"
+              onmouseout="this.src='img/SelectionSortStatic.png'"
+            />
+          </a>
+        </div>
+        <div class="landing__link">
+          <a href="pages/InsertionSort.html">
+            <img
+              src="img/InsertionSortStatic.png"
+              onmouseover="this.src='img/InsertionSortGif.gif'"
+              onmouseout="this.src='img/InsertionSortStatic.png'"
+            />
+          </a>
+        </div>
+        <div class="landing__link">
+          <a href="pages/MergeSort.html">
+            <img
+              src="img/MergeSortStatic.png"
+              onmouseover="this.src='img/MergeSortGif.gif'"
+              onmouseout="this.src='img/MergeSortStatic.png'"
+            />
+          </a>
+        </div>
+        <div class="landing__link">
+          <a href="pages/QuickSort.html">
+            <img
+              src="img/QuickSortStatic.png"
+              onmouseover="this.src='img/QuickSortGif.gif'"
+              onmouseout="this.src='img/QuickSortStatic.png'"
+            />
+          </a>
+        </div>
       </div>
-    </div>
-    <h1 class="links__title">Algorithms</h1>
-    <div class="landing__links__inner">
-      <div class="landing__link">
-        <a href="pages/BubbleSort.html">
-          <img
-            src="img/BubbleSortStatic.png"
-            onmouseover="this.src='img/BubbleSortGif.gif'"
-            onmouseout="this.src='img/BubbleSortStatic.png'"
-          />
-        </a>
-      </div>
-      <div class="landing__link">
-        <a href="pages/SelectionSort.html">
-          <img
-            src="img/SelectionSortStatic.png"
-            onmouseover="this.src='img/SelectionSortGif.gif'"
-            onmouseout="this.src='img/SelectionSortStatic.png'"
-          />
-        </a>
-      </div>
-      <div class="landing__link">
-        <a href="pages/InsertionSort.html">
-          <img
-            src="img/InsertionSortStatic.png"
-            onmouseover="this.src='img/InsertionSortGif.gif'"
-            onmouseout="this.src='img/InsertionSortStatic.png'"
-          />
-        </a>
-      </div>
-      <div class="landing__link">
-        <a href="pages/MergeSort.html">
-          <img
-            src="img/MergeSortStatic.png"
-            onmouseover="this.src='img/MergeSortGif.gif'"
-            onmouseout="this.src='img/MergeSortStatic.png'"
-          />
-        </a>
-      </div>
-      <div class="landing__link">
-        <a href="pages/QuickSort.html">
-          <img
-            src="img/QuickSortStatic.png"
-            onmouseover="this.src='img/QuickSortGif.gif'"
-            onmouseout="this.src='img/QuickSortStatic.png'"
-          />
-        </a>
+      <h1 class="links__title">Pathfinding</h1>
+      <div class="landing__links__inner">
+        <div class="landing__link">
+          <h1>Dijkstra's</h1>
+          <a href="pages/Pathfinding.html">
+            <img
+              src="img/DijkstraStatic.png"
+              onmouseover="this.src='img/DijkstraGif.gif'"
+              onmouseout="this.src='img/DijkstraStatic.png'"
+            />
+          </a>
+        </div>
+        <div class="landing__link">
+          <h1>A* Search</h1>
+          <a href="pages/Pathfinding.html">
+            <img
+              src="img/AstarStatic.png"
+              onmouseover="this.src='img/AstarGif.gif'"
+              onmouseout="this.src='img/AstarStatic.png'"
+            />
+          </a>
+        </div>
       </div>
     </div>
   </body>

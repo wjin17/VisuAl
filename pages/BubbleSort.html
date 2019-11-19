@@ -21,117 +21,119 @@
         <a href="#">upgrade your browser</a> to improve your experience.
       </p>
     <![endif]-->
-    <header>
-      <div>
-        <h1><a href="/">VisuAl</a></h1>
-      </div>
-      <ul>
-        <li class="active">
-          <a href="BubbleSort.html">Sorting Algorithms</a>
-        </li>
-        <li><a href="Array.html">Datastructures</a></li>
-        <li><a href="Pathfinding.html">Pathfinding</a></li>
-        <li><a href="About.html">About</a></li>
-      </ul>
-    </header>
-    <div class="dropdown">
-      <button class="dropdown__button" onclick="toggleDropdown()">
-        Algorithms
-        <i class="fas fa-angle-down"></i>
-      </button>
-      <div class="dropdown__content" id="dropdown__links">
-        <a class="dropdown__active" href="BubbleSort.html">Bubble Sort</a>
-        <a href="SelectionSort.html">Selection Sort</a>
-        <a href="InsertionSort.html">Insertion Sort</a>
-        <a href="MergeSort.html">Merge Sort</a>
-        <a href="QuickSort.html">Quick Sort</a>
-      </div>
-    </div>
-    <div class="canvas">
-      <h1>Bubble Sort</h1>
-      <div id="canvas__inner"></div>
-      <div class="canvas__slider">
-        <div class="canvas__slider__inner">
-          <input
-            type="range"
-            min="0"
-            max="100"
-            value="0"
-            class="slider"
-            id="slider__input"
-          />
+    <div class="main-container">
+      <header>
+        <div>
+          <h1><a href="/">VisuAl</a></h1>
         </div>
-        <div class="play">
-          <button class="play__button" id="play__button__id" type="button">
-            <span id="play__toggle"></span>
-          </button>
+        <ul>
+          <li class="active">
+            <a href="BubbleSort.html">Sorting</a>
+          </li>
+          <li><a href="Array.html">Datastructures</a></li>
+          <li><a href="Pathfinding.html">Pathfinding</a></li>
+          <li><a href="About.html">About</a></li>
+        </ul>
+      </header>
+      <div class="dropdown">
+        <button class="dropdown__button" onclick="toggleDropdown()">
+          Algorithms
+          <i class="fas fa-angle-down"></i>
+        </button>
+        <div class="dropdown__content" id="dropdown__links">
+          <a class="dropdown__active" href="BubbleSort.html">Bubble Sort</a>
+          <a href="SelectionSort.html">Selection Sort</a>
+          <a href="InsertionSort.html">Insertion Sort</a>
+          <a href="MergeSort.html">Merge Sort</a>
+          <a href="QuickSort.html">Quick Sort</a>
         </div>
       </div>
-      <div class="canvas__input">
-        <div class="canvas__input__inner">
-          <h2>Generate Random Values</h2>
-          <p>Enter the number of random values to generate</p>
-          <div class="canvas__input__field">
-            <div>
-              <input class="sort__data" id="bubble-sort__data__random" />
-            </div>
-            <div class="canvas__input__button">
-              <button class="submit__data" onclick="randomInput()">
-                Generate
-              </button>
-            </div>
+      <div class="canvas">
+        <h1>Bubble Sort</h1>
+        <div id="canvas__inner"></div>
+        <div class="canvas__slider">
+          <div class="canvas__slider__inner">
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              class="slider"
+              id="slider__input"
+            />
           </div>
-          <p class="input__error" id="bubble-sort__random__data"></p>
-        </div>
-        <div class="canvas__input__inner">
-          <h2>Input Your Own Values</h2>
-          <p>Enter a list of numbers separated by a comma</p>
-          <div class="canvas__input__field">
-            <div>
-              <input class="sort__data" id="bubble-sort__data__user" />
-            </div>
-            <div class="canvas__input__button">
-              <button class="submit__data" onclick="userInput()">
-                Submit
-              </button>
-            </div>
+          <div class="play">
+            <button class="play__button" id="play__button__id" type="button">
+              <span id="play__toggle"></span>
+            </button>
           </div>
-          <p class="input__error" id="bubble-sort__user__data"></p>
+        </div>
+        <div class="canvas__input">
+          <div class="canvas__input__inner">
+            <h2>Generate Random Values</h2>
+            <p>Enter the number of random values to generate</p>
+            <div class="canvas__input__field">
+              <div>
+                <input class="sort__data" id="bubble-sort__data__random" />
+              </div>
+              <div class="canvas__input__button">
+                <button class="submit__data" onclick="randomInput()">
+                  Generate
+                </button>
+              </div>
+            </div>
+            <p class="input__error" id="bubble-sort__random__data"></p>
+          </div>
+          <div class="canvas__input__inner">
+            <h2>Input Your Own Values</h2>
+            <p>Enter a list of numbers separated by a comma</p>
+            <div class="canvas__input__field">
+              <div>
+                <input class="sort__data" id="bubble-sort__data__user" />
+              </div>
+              <div class="canvas__input__button">
+                <button class="submit__data" onclick="userInput()">
+                  Submit
+                </button>
+              </div>
+            </div>
+            <p class="input__error" id="bubble-sort__user__data"></p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="description">
-      <h1>Whats goin on?</h1>
-      <p>
-        Bubble sort is an algorithm that repeatedly iterates through an array.
-        It begins on the first element and compares it to the element after it.
-        If the that element is smaller than the current one, swap the two. If
-        the next element happens to be larger than the current one, increment
-        the current element to the next position. Repeating this process should
-        eventually yield a sorted array. Once there has been an iteration with
-        no swaps, it can be assumed that the array is sorted and the program
-        stops immediately.
-      </p>
-      <h1>Performance</h1>
-      <h2>Time complexity</h2>
-      <p>
-        Because each iteration has an additional iteration through the array,
-        the time complexity of bubble sort is
-      </p>
-      <p class="description__complexity">
-        O(n^2)
-      </p>
-      <h2>Space complexity</h2>
-      <p>
-        Bubble sort only needs one additional space in memory to perform the
-        swap so its space complexity is
-      </p>
-      <p class="description__complexity">
-        O(1)
-      </p>
-      <a href="https://en.wikipedia.org/wiki/Bubble_sort"
-        ><h1>More Info...</h1></a
-      >
+      <div class="description">
+        <h1>Whats goin on?</h1>
+        <p>
+          Bubble sort is an algorithm that repeatedly iterates through an array.
+          It begins on the first element and compares it to the element after
+          it. If the that element is smaller than the current one, swap the two.
+          If the next element happens to be larger than the current one,
+          increment the current element to the next position. Repeating this
+          process should eventually yield a sorted array. Once there has been an
+          iteration with no swaps, it can be assumed that the array is sorted
+          and the program stops immediately.
+        </p>
+        <h1>Performance</h1>
+        <h2>Time complexity</h2>
+        <p>
+          Because each iteration has an additional iteration through the array,
+          the time complexity of bubble sort is
+        </p>
+        <p class="description__complexity">
+          O(n^2)
+        </p>
+        <h2>Space complexity</h2>
+        <p>
+          Bubble sort only needs one additional space in memory to perform the
+          swap so its space complexity is
+        </p>
+        <p class="description__complexity">
+          O(1)
+        </p>
+        <a href="https://en.wikipedia.org/wiki/Bubble_sort"
+          ><h1>More Info...</h1></a
+        >
+      </div>
     </div>
     <script
       src="https://kit.fontawesome.com/a9dd5ac0e6.js"
