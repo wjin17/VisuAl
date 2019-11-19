@@ -7,11 +7,15 @@ This is a website for visualizing sorting algorithms.
 
 This website was written using html, scss, and plain javascript. The visuals are creating using the [p5js library](https://p5js.org/).
 
-### Sorting
-![alt text](https://raw.githubusercontent.com/wjin17/VisuAl/master/img/BubbleSortGif.gif)
+<h3 align="center">Sorting</h3>
+<p align="center">
+  <img width="320" height="232" src="https://raw.githubusercontent.com/wjin17/VisuAl/master/img/BubbleSortGif.gif">
+</p>
 
-### Pathfinding
-![alt text](https://raw.githubusercontent.com/wjin17/VisuAl/master/img/DijkstraGif.gif)
+<h3 align="center">Pathfinding</h3>
+<p align="center">
+  <img width="320" height="232" src="https://raw.githubusercontent.com/wjin17/VisuAl/master/img/DijkstraGif.gif">
+</p>
 
 ## Running a local instance
 
